@@ -8,25 +8,28 @@ const Stack = createStackNavigator();
 
 export default function StackNavigator() {
     return (
-        <NavigationContainer>
-            <Stack.Navigator
-                initialRouteName="Home"
-                screenOptions={{
-                    headerMode: 'screen',
-                    headerTintColor: 'white',
-                    headerStyle: { backgroundColor: '#121212' },
-                    justifyContent: 'center',
-                }}
-            >
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen
-                    name="AddCrypto"
-                    component={AddCrypto}
-                    options={{
-                        title: 'Back',
+            <NavigationContainer>
+                <Stack.Navigator
+                    initialRouteName="Home"
+                    screenOptions={{
+                        headerMode: 'screen',
+                        headerTintColor: 'white',
+                        headerStyle: { backgroundColor: '#121212' },
+                        justifyContent: 'center',
                     }}
-                />
-            </Stack.Navigator>
-        </NavigationContainer>
+                >
+                    <Stack.Screen name="Home" component={Home}
+                    options={{
+                        title: 'CryptoTracker',
+                    }} />
+                    <Stack.Screen
+                        name="AddCrypto"
+                        component={AddCrypto}
+                        options={{
+                            title: 'Back',
+                        }}
+                    />
+                </Stack.Navigator>
+            </NavigationContainer>
     );
 }
